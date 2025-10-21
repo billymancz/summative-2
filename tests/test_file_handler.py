@@ -69,7 +69,6 @@ class TestFileHandler(unittest.TestCase):
         """
         file_path = "dummy/path/output.csv"
         
-        # We need to mock the writer object to check what is written to the file
         mock_writer = MagicMock()
         with patch('csv.writer', return_value=mock_writer):
             FileHandler.write_employees(file_path, self.employees_list)
